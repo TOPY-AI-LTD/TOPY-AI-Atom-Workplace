@@ -15,12 +15,14 @@
       "claude-workspace:new-project",
       "claude-workspace:start-session",
       "claude-workspace:resume-session",
+      "claude-workspace:delete-session",
       "claude-workspace:start-dev-server",
       "claude-workspace:stop-dev-server",
       "claude-workspace:open-preview",
       "claude-workspace:refresh-preview",
       "claude-workspace:open-external-preview",
       "claude-workspace:clear-output",
+      "claude-workspace:copy-output",
       "claude-workspace:remove-project"
     ]
   },
