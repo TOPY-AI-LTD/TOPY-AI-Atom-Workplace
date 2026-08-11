@@ -1,0 +1,23 @@
+{
+  "name": "claude-workspace",
+  "version": "0.1.0",
+  "description": "Manage Claude Code sessions and local development servers from Atom.",
+  "main": "lib/main.js",
+  "repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-Atom-Workplace",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.60.0 <2.0.0"
+  },
+  "activationCommands": {
+    "atom-workspace": [
+      "claude-workspace:toggle",
+      "claude-workspace:select-project",
+      "claude-workspace:new-project",
+      "claude-workspace:start-session",
+      "claude-workspace:start-dev-server",
+      "claude-workspace:stop-dev-server",
+      "claude-workspace:open-preview"
+    ]
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,44 @@
+.claude-workspace {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 260px;
+}
+
+.claude-workspace__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 8px;
+  border-bottom: 1px solid @base-border-color;
+}
+
+.claude-workspace__projects {
+  min-width: 180px;
+  flex: 1;
+}
+
+.claude-workspace__body {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.claude-workspace__output,
+.claude-workspace__preview {
+  width: 50%;
+  min-height: 240px;
+  margin: 0;
+  border: 0;
+}
+
+.claude-workspace__output {
+  overflow: auto;
+  padding: 12px;
+  white-space: pre-wrap;
+  background: @inset-panel-background-color;
+}
+
+.claude-workspace__preview {
+  background: white;
+}

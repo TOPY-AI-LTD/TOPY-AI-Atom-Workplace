@@ -1,0 +1,4 @@
+'atom-workspace':
+  'ctrl-alt-c': 'claude-workspace:toggle'
+  'ctrl-alt-d': 'claude-workspace:start-dev-server'
+  'ctrl-alt-p': 'claude-workspace:open-preview'
