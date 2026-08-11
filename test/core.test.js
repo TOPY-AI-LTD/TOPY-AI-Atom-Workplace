@@ -14,6 +14,7 @@ function fakeChild() {
   const child = new EventEmitter();
   child.stdout = new EventEmitter();
   child.stderr = new EventEmitter();
+  child.stdin = { writes: [], write(value) { this.writes.push(value); } };
   child.killed = false;
   child.kill = signal => { child.killed = signal || true; child.emit('close', 0); };
   return child;
@@ -66,6 +67,12 @@ function testProcessManager() {
   assert(events.some(event => event.type === 'output' && event.text === 'All good'));
   assert.strictEqual(manager.stopClaude('demo'), true);
   assert.strictEqual(claude.killed, 'SIGTERM');
+  manager.runInteractiveClaude('demo', projectRoot);
+  const terminal = children[2];
+  assert.strictEqual(terminal.bin, 'script');
+  assert.strictEqual(manager.sendInteractiveInput('demo', 'hello'), true);
+  assert.deepStrictEqual(terminal.child.stdin.writes, ['hello\n']);
+  manager.stopClaude('demo');
   manager.dispose();
   fs.rmSync(projectRoot, { recursive: true, force: true });
 }

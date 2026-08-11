@@ -715,16 +715,18 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - [x] `--resume` 恢复；
 - [x] 每个项目独立的 session 历史；
 - [x] session 标题和最近使用时间；
-- [ ] session 删除和更丰富的历史管理。
+- [x] session 删除；
+- [ ] 更丰富的历史管理。
 
-### Phase 3：交互式开发体验
+### Phase 3：交互式开发体验（Linux MVP 已开始实现）
 
-- 集成 `node-pty`；
-- 集成 `xterm.js`；
-- 支持交互式 Claude 权限确认；
-- 支持用户输入和中断；
-- 支持多个终端 tab；
-- 支持 Claude 和 dev server 独立日志流。
+- [x] 通过 Linux `script` 提供交互式 Claude PTY；
+- [x] 支持从工作区输入框发送文本；
+- [ ] 集成跨平台 `node-pty`；
+- [ ] 集成 `xterm.js`；
+- [ ] 支持完整交互式 Claude 权限确认；
+- [ ] 支持 Ctrl-C/信号中断和多终端 tab；
+- [x] 支持 Claude、交互终端和 dev server 的独立日志来源。
 
 ### Phase 4：预览增强
 

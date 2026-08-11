@@ -5,7 +5,9 @@
       'New Project': 'claude-workspace:new-project'
     'Claude Session':
       'Start Session': 'claude-workspace:start-session'
+      'Interactive Claude': 'claude-workspace:start-terminal'
       'Resume Session': 'claude-workspace:resume-session'
+      'Send Terminal Input': 'claude-workspace:send-terminal-input'
       'Delete Session': 'claude-workspace:delete-session'
     'Development Server':
       'Start Dev Server': 'claude-workspace:start-dev-server'
@@ -25,6 +27,7 @@
       'Select Project': 'claude-workspace:select-project'
       'New Project': 'claude-workspace:new-project'
       'Start Claude Session': 'claude-workspace:start-session'
+      'Interactive Claude': 'claude-workspace:start-terminal'
       'Resume Claude Session': 'claude-workspace:resume-session'
       'Delete Claude Session': 'claude-workspace:delete-session'
       'Start Dev Server': 'claude-workspace:start-dev-server'
