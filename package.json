@@ -8,31 +8,6 @@
   "engines": {
     "atom": ">=1.60.0 <2.0.0"
   },
-  "activationCommands": {
-    "atom-workspace": [
-      "claude-workspace:toggle",
-      "claude-workspace:select-project",
-      "claude-workspace:new-project",
-      "claude-workspace:start-session",
-      "claude-workspace:start-terminal",
-      "claude-workspace:resume-session",
-      "claude-workspace:send-terminal-input",
-      "claude-workspace:stop-terminal",
-      "claude-workspace:interrupt-terminal",
-      "claude-workspace:delete-session",
-      "claude-workspace:rename-session",
-      "claude-workspace:clear-sessions",
-      "claude-workspace:start-dev-server",
-      "claude-workspace:stop-dev-server",
-      "claude-workspace:open-preview",
-      "claude-workspace:refresh-preview",
-      "claude-workspace:open-external-preview",
-      "claude-workspace:clear-output",
-      "claude-workspace:copy-output",
-      "claude-workspace:export-output",
-      "claude-workspace:remove-project"
-    ]
-  },
   "scripts": {
     "test": "node test/core.test.js"
   },
