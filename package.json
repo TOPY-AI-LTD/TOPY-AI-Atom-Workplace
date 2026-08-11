@@ -27,5 +27,26 @@
   "scripts": {
     "test": "node test/core.test.js"
   },
+  "configSchema": {
+    "claudeCommand": {
+      "type": "string",
+      "default": "claude",
+      "description": "Claude Code executable name or absolute path."
+    },
+    "defaultDevPort": {
+      "type": "integer",
+      "default": 3000,
+      "minimum": 1,
+      "maximum": 65535,
+      "description": "Fallback port used when a dev server does not print its URL."
+    },
+    "maxOutputChars": {
+      "type": "integer",
+      "default": 500000,
+      "minimum": 10000,
+      "maximum": 5000000,
+      "description": "Maximum console output retained in the workspace panel."
+    }
+  },
   "dependencies": {}
 }
