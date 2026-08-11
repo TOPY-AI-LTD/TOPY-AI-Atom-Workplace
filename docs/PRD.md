@@ -39,11 +39,13 @@
 - 启动和停止 `npm run dev`、`pnpm dev`、`yarn dev`；
 - 在 Atom 面板显示 Claude 和 dev server 输出；
 - 识别常见 localhost 地址并在预览区域加载；
+- 解析并按项目保存 Claude `session_id`，从会话选择器恢复 session；
+- 按项目隔离 Claude/dev server 进程，并支持停止当前项目进程；
+- 限制工作区日志长度，避免长时间运行导致面板无限增长；
 - 通过 Atom 菜单、命令面板和快捷键操作。
 
 以下能力属于规划中功能，目前不能视为已完成：
 
-- Claude session ID 的持久化和恢复；
 - 完整交互式 Claude 终端；
 - 自动创建项目模板；
 - 多项目并行运行和独立进程状态管理；
@@ -255,7 +257,7 @@ claude -p \
 
 ### FR-005：Claude session 管理
 
-后续版本必须支持 session 生命周期管理。
+插件必须支持按项目保存和恢复 Claude session 生命周期。
 
 **目标能力：**
 
@@ -278,6 +280,13 @@ claude -p --resume SESSION_ID "继续处理上一个任务"
 - 不保存认证 token；
 - 不把完整对话默认上传到 TOPY 服务；
 - 用户删除项目记录时，可以选择是否删除本地 session 索引。
+
+**当前实现：**
+
+- 解析 Claude `stream-json` 顶层 `session_id`；
+- 按项目保存 session ID、标题和时间；
+- 在工作区会话选择器中恢复指定 session；
+- 恢复失败时保留原 session 记录。
 
 ### FR-006：启动开发服务器
 
@@ -688,24 +697,25 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - 注册菜单、命令和快捷键；
 - 发布 GitHub public repository。
 
-### Phase 1：MVP 稳定化
+### Phase 1：MVP 稳定化（核心功能已完成，持续补强）
 
-- 增加进程状态显示；
-- 修复跨平台命令解析；
-- 增加目录失效处理；
-- 增加日志清空和复制；
-- 增加项目删除/重命名；
-- 增加基本单元测试；
-- 手动测试 Next.js、Vite、React 项目。
+- [x] 增加进程状态显示；
+- [x] 增加目录失效处理；
+- [x] 增加日志清空和长度上限；
+- [x] 增加项目删除；
+- [x] 增加基本单元测试；
+- [ ] 修复跨平台命令解析；
+- [ ] 手动测试 Next.js、Vite、React 项目。
 
-### Phase 2：Session 管理
+### Phase 2：Session 管理（基础能力已并入 MVP，交互增强待完成）
 
-- 解析 Claude `stream-json` 中的 session ID；
-- 保存 session 元数据；
-- session 列表；
-- `--resume` 恢复；
-- 每个项目独立的 session 历史；
-- session 标题和最近使用时间。
+- [x] 解析 Claude `stream-json` 中的 session ID；
+- [x] 保存 session 元数据；
+- [x] session 列表；
+- [x] `--resume` 恢复；
+- [x] 每个项目独立的 session 历史；
+- [x] session 标题和最近使用时间；
+- [ ] session 删除和更丰富的历史管理。
 
 ### Phase 3：交互式开发体验
 
@@ -870,4 +880,3 @@ Claude Code 负责自己的认证。插件不得读取、复制、上传或显�
 | Preview | 在 Atom 或外部浏览器中查看本地开发页面 |
 | MVP | 最小可用产品版本 |
 | PTY | 伪终端，用于实现交互式命令行体验 |
-
