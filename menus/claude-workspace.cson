@@ -1,4 +1,17 @@
 'menu':
+  'Claude Workspace':
+    'Project':
+      'Select Project': 'claude-workspace:select-project'
+      'New Project': 'claude-workspace:new-project'
+    'Claude Session':
+      'Start Session': 'claude-workspace:start-session'
+    'Development Server':
+      'Start Dev Server': 'claude-workspace:start-dev-server'
+      'Stop Dev Server': 'claude-workspace:stop-dev-server'
+    'Preview':
+      'Open Preview': 'claude-workspace:open-preview'
+    '-': null
+    'Toggle Workspace Panel': 'claude-workspace:toggle'
   'Packages':
     'Claude Workspace':
       'Select Project': 'claude-workspace:select-project'
