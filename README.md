@@ -16,6 +16,7 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 - Start multiple interactive Claude terminals with `node-pty` and render them with `xterm.js` when optional dependencies are available.
 - Detect common frontend frameworks and package managers from `package.json`.
 - Override project settings with a local `.claude-workspace.json` file.
+- Show Git branch and dirty working-tree state in the project selector.
 - Remove registered projects without deleting their files.
 
 ## Requirements

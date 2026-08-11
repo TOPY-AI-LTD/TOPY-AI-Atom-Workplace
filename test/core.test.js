@@ -107,8 +107,16 @@ function testProjectProfiles() {
   fs.rmSync(root, { recursive: true, force: true });
 }
 
+function testGitStatus() {
+  const root = makeTempDir();
+  const manager = new ProcessManager(null);
+  assert.strictEqual(manager.gitStatus(root), null);
+  fs.rmSync(root, { recursive: true, force: true });
+}
+
 testProjectStore();
 testProcessManager();
 testHelpers();
 testProjectProfiles();
+testGitStatus();
 console.log('All core tests passed.');
