@@ -17,6 +17,7 @@
       "claude-workspace:start-terminal",
       "claude-workspace:resume-session",
       "claude-workspace:send-terminal-input",
+      "claude-workspace:stop-terminal",
       "claude-workspace:delete-session",
       "claude-workspace:start-dev-server",
       "claude-workspace:stop-dev-server",
@@ -53,5 +54,9 @@
       "description": "Maximum console output retained in the workspace panel."
     }
   },
-  "dependencies": {}
+  "dependencies": {},
+  "optionalDependencies": {
+    "node-pty": "^0.10.1",
+    "xterm": "^4.19.0"
+  }
 }

@@ -72,6 +72,14 @@ function testProcessManager() {
   assert.strictEqual(terminal.bin, 'script');
   assert.strictEqual(manager.sendInteractiveInput('demo', 'hello'), true);
   assert.deepStrictEqual(terminal.child.stdin.writes, ['hello\n']);
+  const secondTerminalId = manager.runInteractiveClaude('demo', projectRoot);
+  const thirdTerminalId = manager.runInteractiveClaude('demo', projectRoot);
+  assert.strictEqual(manager.terminalIds('demo').length, 3);
+  assert.strictEqual(manager.sendInteractiveInput('demo', 'second', secondTerminalId), true);
+  assert.deepStrictEqual(children[3].child.stdin.writes, ['second\n']);
+  manager.stopInteractiveClaude('demo', secondTerminalId);
+  assert.strictEqual(manager.terminalIds('demo').length, 2);
+  assert(manager.profile(projectRoot).framework === 'node' || manager.profile(projectRoot).framework === 'nextjs');
   manager.stopClaude('demo');
   manager.dispose();
   fs.rmSync(projectRoot, { recursive: true, force: true });

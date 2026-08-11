@@ -8,6 +8,7 @@
       'Interactive Claude': 'claude-workspace:start-terminal'
       'Resume Session': 'claude-workspace:resume-session'
       'Send Terminal Input': 'claude-workspace:send-terminal-input'
+      'Stop Terminal': 'claude-workspace:stop-terminal'
       'Delete Session': 'claude-workspace:delete-session'
     'Development Server':
       'Start Dev Server': 'claude-workspace:start-dev-server'
@@ -30,6 +31,7 @@
       'Interactive Claude': 'claude-workspace:start-terminal'
       'Resume Claude Session': 'claude-workspace:resume-session'
       'Delete Claude Session': 'claude-workspace:delete-session'
+      'Stop Terminal': 'claude-workspace:stop-terminal'
       'Start Dev Server': 'claude-workspace:start-dev-server'
       'Stop Dev Server': 'claude-workspace:stop-dev-server'
       'Open Preview': 'claude-workspace:open-preview'

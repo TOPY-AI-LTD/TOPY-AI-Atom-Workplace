@@ -169,6 +169,7 @@
 
 .claude-workspace__console {
   display: flex;
+  flex-direction: column;
   min-width: 0;
 }
 
@@ -185,6 +186,37 @@
   padding: 12px;
   white-space: pre-wrap;
   background: @inset-panel-background-color;
+  flex: 1;
+  min-height: 0;
+}
+
+.claude-workspace__terminalbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px;
+  color: @text-color-subtle;
+  background: @tool-panel-background-color;
+  border-top: 1px solid @base-border-color;
+  font-size: 11px;
+}
+
+.claude-workspace__terminal {
+  height: 220px;
+  padding: 8px;
+  overflow: hidden;
+  color: #d7dae0;
+  background: #1e1e1e;
+  border-top: 1px solid @base-border-color;
+}
+
+.claude-workspace__terminal .xterm { height: 100%; }
+.claude-workspace__terminal-view { height: 100%; }
+.claude-workspace__terminal-fallback {
+  height: 100%;
+  margin: 0;
+  overflow: auto;
+  white-space: pre-wrap;
 }
 
 .claude-workspace__preview {

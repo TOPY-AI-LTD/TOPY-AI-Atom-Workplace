@@ -12,6 +12,8 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 - Open a local preview in an embedded panel.
 - Save Claude session IDs per project and resume them from the session selector.
 - Start an interactive Claude session on Linux through the system `script` PTY utility.
+- Start multiple interactive Claude terminals with `node-pty` and render them with `xterm.js` when optional dependencies are available.
+- Detect common frontend frameworks and package managers from `package.json`.
 - Remove registered projects without deleting their files.
 
 ## Requirements
@@ -58,6 +60,7 @@ Default shortcuts:
 - `Ctrl+Alt+P`: open preview
 
 The interactive Claude action currently uses Linux `script` to provide a PTY. On systems without that utility, use the structured `Start Claude` action.
+The package falls back to the `script` PTY or a plain child process when optional native/UI terminal dependencies cannot be loaded.
 
 ## Safety notes
 
@@ -66,7 +69,7 @@ The package launches `claude` and the project's development command as child pro
 ## Roadmap
 
 - Persist and resume Claude session IDs.
-- Add a real interactive terminal using `node-pty` and `xterm.js`.
-- Detect framework and dev port more reliably.
+- Complete interactive permission prompts and signal handling.
+- Detect framework and dev port from more configuration formats.
 - Add project removal and process status indicators.
 - Add tests for the process manager and project store.
