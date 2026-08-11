@@ -240,7 +240,8 @@
   font-size: 11px;
 }
 
-.claude-workspace__previewbar span { margin-right: auto; }
+.claude-workspace__previewbar span:first-child { margin-right: auto; }
+.claude-workspace__preview-url { color: @text-color-subtle; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .claude-workspace__preview-empty {
   display: flex;

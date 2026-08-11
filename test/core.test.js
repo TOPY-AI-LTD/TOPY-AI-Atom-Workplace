@@ -79,6 +79,8 @@ function testProcessManager() {
   assert.deepStrictEqual(children[3].child.stdin.writes, ['second\n']);
   manager.stopInteractiveClaude('demo', secondTerminalId);
   assert.strictEqual(manager.terminalIds('demo').length, 2);
+  assert.strictEqual(manager.interruptInteractiveClaude('demo', thirdTerminalId), true);
+  assert(events.some(event => event.type === 'interrupt' && event.terminalId === thirdTerminalId));
   assert(manager.profile(projectRoot).framework === 'node' || manager.profile(projectRoot).framework === 'nextjs');
   manager.stopClaude('demo');
   manager.dispose();
@@ -92,7 +94,21 @@ function testHelpers() {
   assert.strictEqual(ProcessManager.textFromClaudeEvent({ result: 'done' }), 'done');
 }
 
+function testProjectProfiles() {
+  const root = makeTempDir();
+  fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify({ dependencies: { vite: '^5.0.0', react: '^18.0.0' }, scripts: { dev: 'vite --port 4180' } }));
+  const profile = ProcessManager.detectProjectProfile(root, fs);
+  assert.deepStrictEqual(profile, { framework: 'vite', packageManager: 'npm', devCommand: null, devPort: 4180 });
+  fs.writeFileSync(path.join(root, 'vite.config.ts'), 'export default { server: { port: 4190 } };');
+  fs.writeFileSync(path.join(root, '.claude-workspace.json'), JSON.stringify({ devPort: 4200, devCommand: 'npm run start' }));
+  const configured = ProcessManager.detectProjectProfile(root, fs);
+  assert.strictEqual(configured.devPort, 4200);
+  assert.strictEqual(configured.devCommand, 'npm run start');
+  fs.rmSync(root, { recursive: true, force: true });
+}
+
 testProjectStore();
 testProcessManager();
 testHelpers();
+testProjectProfiles();
 console.log('All core tests passed.');

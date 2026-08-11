@@ -42,14 +42,18 @@
 - 解析并按项目保存 Claude `session_id`，从会话选择器恢复 session；
 - 按项目隔离 Claude/dev server 进程，并支持停止当前项目进程；
 - 限制工作区日志长度，避免长时间运行导致面板无限增长；
+- 支持 session 最近使用时间、默认续接最近 session、重命名和清空历史索引；
+- 在项目列表显示运行状态和 session 数量；
+- 支持项目级 `.claude-workspace.json` 覆盖 dev command、package manager、framework 和端口；
+- 支持多终端 Ctrl-C 中断、终端选择和独立停止；
+- 对常见 Next.js、Vite、Astro、Nuxt 项目进行基础框架与端口识别，并在启动超时而未发现 URL 时提示；
 - 通过 Atom 菜单、命令面板和快捷键操作。
 
 以下能力属于规划中功能，目前不能视为已完成：
 
-- 完整交互式 Claude 权限流程和 Ctrl-C 信号控制；
+- 浏览器控制台和网络错误诊断；
 - 自动创建项目模板；
 - 多项目并行运行和独立进程状态管理；
-- 浏览器控制台和网络错误诊断；
 - 自动化 CI 和真实框架手动验收。
 
 ---
@@ -319,13 +323,14 @@ http://127.0.0.1:3000
 localhost:3000
 ```
 
-后续版本必须增加：
+当前版本已经支持：
 
-- Next.js、Vite、Astro、Nuxt 等框架适配；
-- 从 `package.json` 和配置文件读取端口；
+- Next.js、Vite、Astro、Nuxt 等框架的基础适配；
+- 从 `package.json`、常见配置文件和 `.claude-workspace.json` 读取端口；
 - HTTP 健康检查；
-- 端口占用检测；
 - server 启动超时提示。
+
+后续版本需要增加端口占用的明确诊断。
 
 ### FR-008：Atom 内预览
 
@@ -716,7 +721,7 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - [x] 每个项目独立的 session 历史；
 - [x] session 标题和最近使用时间；
 - [x] session 删除；
-- [ ] 更丰富的历史管理。
+- [x] 最近使用时间、重命名、清空历史和默认续接最近 session；
 
 ### Phase 3：交互式开发体验（基础能力已实现）
 
@@ -724,8 +729,8 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - [x] 支持从工作区输入框发送文本；
 - [x] 集成跨平台 `node-pty`（作为可选原生依赖，缺失时回退）；
 - [x] 集成 `xterm.js`（作为可选渲染依赖，缺失时回退）；
-- [ ] 支持完整交互式 Claude 权限确认；
-- [ ] 支持 Ctrl-C/信号中断；
+- [x] 通过真实 PTY 保留完整交互式 Claude 权限确认流程；
+- [x] 支持 Ctrl-C/信号中断；
 - [x] 支持多终端 tab/terminal 选择和独立输入；
 - [x] 支持 Claude、交互终端和 dev server 的独立日志来源。
 
@@ -737,7 +742,7 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - 浏览器控制台；
 - 网络错误；
 - [x] 基于依赖和 dev script 的基础端口、框架识别；
-- [ ] 更完整的配置文件端口识别。
+- [x] 从 `.claude-workspace.json` 和常见 Next/Vite/Astro/Nuxt 配置文件读取端口；
 
 ### Phase 5：团队工作区
 

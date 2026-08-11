@@ -11,9 +11,11 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 - Show process output inside an Atom panel.
 - Open a local preview in an embedded panel.
 - Save Claude session IDs per project and resume them from the session selector.
+- Rename, clear, and automatically resume the most recent saved session.
 - Start an interactive Claude session on Linux through the system `script` PTY utility.
 - Start multiple interactive Claude terminals with `node-pty` and render them with `xterm.js` when optional dependencies are available.
 - Detect common frontend frameworks and package managers from `package.json`.
+- Override project settings with a local `.claude-workspace.json` file.
 - Remove registered projects without deleting their files.
 
 ## Requirements
@@ -46,6 +48,7 @@ npm test
 - `Claude Workspace: Start Claude Session`
 - `Claude Workspace: Interactive Claude`
 - `Claude Workspace: Resume Claude Session`
+- `Claude Workspace: Rename Claude Session`
 - `Claude Workspace: Start Dev Server`
 - `Claude Workspace: Stop Dev Server`
 - `Claude Workspace: Open Preview`
@@ -61,6 +64,17 @@ Default shortcuts:
 
 The interactive Claude action currently uses Linux `script` to provide a PTY. On systems without that utility, use the structured `Start Claude` action.
 The package falls back to the `script` PTY or a plain child process when optional native/UI terminal dependencies cannot be loaded.
+
+Optional project configuration example:
+
+```json
+{
+  "devCommand": "pnpm dev -- --port 4100",
+  "devPort": 4100,
+  "packageManager": "pnpm",
+  "framework": "vite"
+}
+```
 
 ## Safety notes
 
