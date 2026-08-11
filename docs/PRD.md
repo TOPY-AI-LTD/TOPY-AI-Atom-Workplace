@@ -34,6 +34,7 @@
 当前仓库已经包含一个可加载的 Atom package MVP，支持：
 
 - 注册和选择本地项目目录；
+- 自动读取 Atom 当前已打开的项目目录，并监听项目路径变化；
 - 将项目目录加入 Atom；
 - 启动 Claude Code 的非交互式检查任务；
 - 启动和停止 `npm run dev`、`pnpm dev`、`yarn dev`；
