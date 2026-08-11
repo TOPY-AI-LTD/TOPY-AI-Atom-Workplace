@@ -5,11 +5,16 @@
       'New Project': 'claude-workspace:new-project'
     'Claude Session':
       'Start Session': 'claude-workspace:start-session'
+      'Resume Session': 'claude-workspace:resume-session'
     'Development Server':
       'Start Dev Server': 'claude-workspace:start-dev-server'
       'Stop Dev Server': 'claude-workspace:stop-dev-server'
     'Preview':
       'Open Preview': 'claude-workspace:open-preview'
+      'Refresh Preview': 'claude-workspace:refresh-preview'
+      'Open in External Browser': 'claude-workspace:open-external-preview'
+    'Clear Output': 'claude-workspace:clear-output'
+    'Remove Current Project': 'claude-workspace:remove-project'
     '-': null
     'Toggle Workspace Panel': 'claude-workspace:toggle'
   'Packages':
@@ -17,6 +22,7 @@
       'Select Project': 'claude-workspace:select-project'
       'New Project': 'claude-workspace:new-project'
       'Start Claude Session': 'claude-workspace:start-session'
+      'Resume Claude Session': 'claude-workspace:resume-session'
       'Start Dev Server': 'claude-workspace:start-dev-server'
       'Stop Dev Server': 'claude-workspace:stop-dev-server'
       'Open Preview': 'claude-workspace:open-preview'

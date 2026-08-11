@@ -10,6 +10,8 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 - Start and stop `npm run dev`, `pnpm dev`, or `yarn dev`.
 - Show process output inside an Atom panel.
 - Open a local preview in an embedded panel.
+- Save Claude session IDs per project and resume them from the session selector.
+- Remove registered projects without deleting their files.
 
 ## Requirements
 
@@ -27,15 +29,25 @@ atom --dev
 
 In the development Atom window, run `Window: Reload` after changing package files.
 
+Run the core tests with:
+
+```bash
+npm test
+```
+
 ## Commands
 
 - `Claude Workspace: Toggle`
 - `Claude Workspace: Select Project`
 - `Claude Workspace: New Project`
 - `Claude Workspace: Start Claude Session`
+- `Claude Workspace: Resume Claude Session`
 - `Claude Workspace: Start Dev Server`
 - `Claude Workspace: Stop Dev Server`
 - `Claude Workspace: Open Preview`
+- `Claude Workspace: Refresh Preview`
+- `Claude Workspace: Open in External Browser`
+- `Claude Workspace: Remove Current Project`
 
 Default shortcuts:
 
