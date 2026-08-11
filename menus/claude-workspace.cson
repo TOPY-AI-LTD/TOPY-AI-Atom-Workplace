@@ -16,6 +16,7 @@
       'Open in External Browser': 'claude-workspace:open-external-preview'
     'Clear Output': 'claude-workspace:clear-output'
     'Copy Output': 'claude-workspace:copy-output'
+    'Export Output': 'claude-workspace:export-output'
     'Remove Current Project': 'claude-workspace:remove-project'
     '-': null
     'Toggle Workspace Panel': 'claude-workspace:toggle'

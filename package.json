@@ -23,6 +23,7 @@
       "claude-workspace:open-external-preview",
       "claude-workspace:clear-output",
       "claude-workspace:copy-output",
+      "claude-workspace:export-output",
       "claude-workspace:remove-project"
     ]
   },
