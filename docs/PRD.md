@@ -47,12 +47,13 @@
 - 在项目列表显示 Git 分支和工作区是否有未提交改动；
 - 支持项目级 `.claude-workspace.json` 覆盖 dev command、package manager、framework 和端口；
 - 支持多终端 Ctrl-C 中断、终端选择和独立停止；
+- 在支持 Electron `webview` 的 Atom 环境捕获预览 console 和加载失败事件，旧环境回退到 iframe；
 - 对常见 Next.js、Vite、Astro、Nuxt 项目进行基础框架与端口识别，并在启动超时而未发现 URL 时提示；
 - 通过 Atom 菜单、命令面板和快捷键操作。
 
 以下能力属于规划中功能，目前不能视为已完成：
 
-- 浏览器控制台和网络错误诊断；
+- 更完整的浏览器控制台和网络错误诊断；
 - 自动创建项目模板；
 
 ---
@@ -738,8 +739,8 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - 独立 Atom pane；
 - [x] 自动健康检查；
 - [x] 刷新和重新连接；
-- 浏览器控制台；
-- 网络错误；
+- [x] Electron webview console 输出和加载失败诊断（不支持时 iframe 回退）；
+- [x] HTTP 健康检查和网络错误提示；
 - [x] 基于依赖和 dev script 的基础端口、框架识别；
 - [x] 从 `.claude-workspace.json` 和常见 Next/Vite/Astro/Nuxt 配置文件读取端口；
 
