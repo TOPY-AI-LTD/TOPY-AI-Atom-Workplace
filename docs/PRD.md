@@ -54,7 +54,6 @@
 
 - 浏览器控制台和网络错误诊断；
 - 自动创建项目模板；
-- 自动化 CI。
 
 ---
 
@@ -752,6 +751,8 @@ MVP 使用 Claude Code CLI，而不是直接调用 Anthropic API。这样可以�
 - 团队级文档；
 - 可选的 TOPY 服务集成；
 - 项目级 AI 工作流模板。
+
+仓库已加入 GitHub Actions 基础 CI，自动执行依赖安装、核心测试、JavaScript 语法检查和 package JSON 校验。
 
 ---
 
