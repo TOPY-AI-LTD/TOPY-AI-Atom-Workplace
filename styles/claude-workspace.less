@@ -35,22 +35,21 @@
 
 .claude-workspace__sidebar-controls {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   gap: 6px;
   padding: 10px;
   border-bottom: 1px solid @base-border-color;
   background: @base-background-color;
 }
 
-.claude-workspace__sidebar-controls label {
-  color: @text-color-subtle;
-  font-size: 11px;
-  text-transform: uppercase;
-}
+.claude-workspace--sidebar .claude-workspace__projects,
+.claude-workspace--sidebar .claude-workspace__session-controls { min-width: 0; }
+.claude-workspace--sidebar .claude-workspace__projects { flex: 1.2; }
 
 .claude-workspace__session-controls {
   display: flex;
   gap: 6px;
+  flex: 1.8;
 }
 
 .claude-workspace__session-controls .claude-workspace__sessions {
@@ -73,7 +72,7 @@
 .claude-workspace__sidebar-terminal .claude-workspace__terminal {
   flex: 1;
   height: auto;
-  min-height: 220px;
+  min-height: 0;
   border-top: 0;
 }
 
