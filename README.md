@@ -16,6 +16,7 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 - Rename, clear, and automatically resume the most recent saved session.
 - Start an interactive Claude session on Linux through the system `script` PTY utility.
 - Start multiple interactive Claude terminals with `node-pty` and render them with `xterm.js` when optional dependencies are available.
+- Open a native project shell terminal in the sidebar, similar to an editor-integrated terminal; run `claude`, `npm`, or any other project command there.
 - Detect common frontend frameworks and package managers from `package.json`.
 - Override project settings with a local `.claude-workspace.json` file.
 - Show Git branch and dirty working-tree state in the project selector.

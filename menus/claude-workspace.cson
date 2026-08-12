@@ -6,6 +6,7 @@
     'Claude Session':
       'Start Session': 'claude-workspace:start-session'
       'Interactive Claude': 'claude-workspace:start-terminal'
+      'Shell Terminal': 'claude-workspace:start-shell'
       'Resume Session': 'claude-workspace:resume-session'
       'Send Terminal Input': 'claude-workspace:send-terminal-input'
       'Stop Terminal': 'claude-workspace:stop-terminal'
@@ -32,6 +33,7 @@
       'New Project': 'claude-workspace:new-project'
       'Start Claude Session': 'claude-workspace:start-session'
       'Interactive Claude': 'claude-workspace:start-terminal'
+      'Shell Terminal': 'claude-workspace:start-shell'
       'Resume Claude Session': 'claude-workspace:resume-session'
       'Delete Claude Session': 'claude-workspace:delete-session'
       'Rename Claude Session': 'claude-workspace:rename-session'

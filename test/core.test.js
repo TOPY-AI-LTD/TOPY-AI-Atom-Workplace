@@ -81,6 +81,10 @@ function testProcessManager() {
   assert.strictEqual(manager.terminalIds('demo').length, 2);
   assert.strictEqual(manager.interruptInteractiveClaude('demo', thirdTerminalId), true);
   assert(events.some(event => event.type === 'interrupt' && event.terminalId === thirdTerminalId));
+  const shellTerminalId = manager.runInteractiveShell('demo', projectRoot);
+  const shell = children[children.length - 1];
+  assert.strictEqual(shell.bin, 'script');
+  assert.strictEqual(manager.sendInteractiveInput('demo', 'echo shell-ok', shellTerminalId), true);
   assert(manager.profile(projectRoot).framework === 'node' || manager.profile(projectRoot).framework === 'nextjs');
   manager.stopClaude('demo');
   manager.dispose();
