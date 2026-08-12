@@ -3,6 +3,13 @@
   "version": "0.1.0",
   "description": "Manage Claude Code sessions and local development servers from Atom.",
   "main": "lib/main.js",
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "0.1.0": "consumeStatusBar"
+      }
+    }
+  },
   "repository": "https://github.com/TOPY-AI-LTD/TOPY-AI-Atom-Workplace",
   "license": "MIT",
   "engines": {

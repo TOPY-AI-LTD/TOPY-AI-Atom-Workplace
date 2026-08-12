@@ -6,6 +6,7 @@ Atom package for managing local projects, Claude Code sessions, and frontend dev
 
 - Select or register a local project directory.
 - Automatically import directories already open in Atom and keep the list synchronized.
+- Toggle the Claude Workspace from an Atom Status Bar button and use it in the right sidebar.
 - Open the directory in Atom.
 - Start a Claude Code inspection session.
 - Start and stop `npm run dev`, `pnpm dev`, or `yarn dev`.
